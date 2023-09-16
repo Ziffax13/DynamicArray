@@ -17,17 +17,17 @@ public:
     int GetSize()const;
     DynamicArray GetObj()const;
 
-    DynamicArray operator+(int);
-    DynamicArray operator-(int);
-    DynamicArray operator*(int);
-    DynamicArray operator+(DynamicArray);
-    DynamicArray operator-(DynamicArray);
+    DynamicArray operator+(int)const;
+    DynamicArray operator-(int)const;
+    DynamicArray operator*(int)const;
+    DynamicArray operator+(DynamicArray)const;
+    DynamicArray operator-(DynamicArray)const;
     DynamicArray& operator--();
     DynamicArray& operator++();
     DynamicArray& operator=(DynamicArray);
 
     void ReSize(int size);// изменение размера массива
     void Sort();// сортировка(любой алгоритм сортировки)
-    int Search(int a); // поиск элемента в массиве, возвращает индекс наиденного эл., либо -1.
+    int Search(int a)const; // поиск элемента в массиве, возвращает индекс наиденного эл., либо -1.
     void Reverse(); // перезаписывает последовательность элементов в обратном порядке, напрмер 12345 -> 54321
 };

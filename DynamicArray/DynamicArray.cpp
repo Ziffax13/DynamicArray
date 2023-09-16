@@ -11,13 +11,13 @@ DynamicArray DynamicArray::GetObj()const
 
     return obj;
 }
-DynamicArray DynamicArray::operator+(int size)
+DynamicArray DynamicArray::operator+(int size)const
 {
     DynamicArray a(*this);
     a.ReSize(a.size + size);
     return a;
 }
-DynamicArray DynamicArray::operator-(int size)
+DynamicArray DynamicArray::operator-(int size)const
 {
     DynamicArray a(*this);
     if (a.size < size)
@@ -27,7 +27,7 @@ DynamicArray DynamicArray::operator-(int size)
     a.ReSize(a.size - size);
     return a;
 }
-DynamicArray DynamicArray::operator*(int x)
+DynamicArray DynamicArray::operator*(int x)const
 {
     DynamicArray a(*this);
     for (int i = 0; i < size; i++)
@@ -36,7 +36,7 @@ DynamicArray DynamicArray::operator*(int x)
     }
     return a;
 }
-DynamicArray DynamicArray::operator+(DynamicArray b)
+DynamicArray DynamicArray::operator+(DynamicArray b)const
 {
     DynamicArray a(*this);
     a.ReSize(a.size + b.size);
@@ -56,7 +56,7 @@ DynamicArray& DynamicArray::operator++()
     ReSize(size + 1);
     return *this;
 }
-DynamicArray DynamicArray::operator-(DynamicArray b)
+DynamicArray DynamicArray::operator-(DynamicArray b)const
 {
     DynamicArray a(*this);
     for (int i = 0; i < b.size; i++)
@@ -173,7 +173,7 @@ void DynamicArray::Sort()
         }
     }
 }
-int DynamicArray::Search(int a)
+int DynamicArray::Search(int a)const
 {
     for (int i = 0; i < size; i++)
     {
